@@ -1,0 +1,30 @@
+<h1>User List</h1>
+
+<div class = "container">
+    <table class = "table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i = 0; i < userList.length; i++) { %>
+                <tr>
+                    <td><%= i+1 %></td>
+                    <td><%= userList[i].id %></td>
+                    <td><%= userList[i].name %></td>
+                    <td><%= userList[i].surname %></td>
+                    <td><%= userList[i].email %></td>
+                    <td><%= userList[i].username %></td>
+                    <td>
+                        <!-- <a href="/login/editUser/<%= userList[i].id %>" class="btn btn-warning">Edit</a> -->
+                        <a href = "/login/deleteUser/<%= userList[i].username %>" class = "btn btn-danger">Delete</a>
+                </tr>
+            <% } %>
+        </tbody>
